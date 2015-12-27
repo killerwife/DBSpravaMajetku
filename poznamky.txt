@@ -1,0 +1,4 @@
+datove typy
+stav majetku
+rekurzia oddelenie
+umiestnenie majetku datum primarny kluc
