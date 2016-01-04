@@ -13,6 +13,7 @@ CREATE TABLE typMajetku
 (
 typMajetku Char(1),
 popis Varchar2(50),
+pocetDniServis Integer,
 PRIMARY KEY(typMajetku)
 );
 /
