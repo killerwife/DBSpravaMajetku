@@ -2,7 +2,7 @@ CREATE TABLE pracovnik
 (
 meno Varchar2(30),
 priezvisko Varchar2(30),
-rodneCislo Number,
+rodneCislo Char(10),
 datumPrijatia Date,
 datumOdstupu Date,
 IDpracovnika Integer,
@@ -11,7 +11,7 @@ PRIMARY KEY(IDpracovnika)
 /
 CREATE TABLE typMajetku
 (
-typMajetku Char(1),
+typMajetku Integer,
 popis Varchar2(50),
 pocetDniServis Integer,
 PRIMARY KEY(typMajetku)
@@ -20,7 +20,7 @@ PRIMARY KEY(typMajetku)
 CREATE TABLE budovy
 (
 id Integer,
-nazov Varchar2(30),
+nazov Varchar2(50),
 PRIMARY KEY(id)
 );
 /
@@ -34,14 +34,14 @@ PRIMARY KEY(ICO)
 /
 CREATE TABLE typAktivity
 (
-typAktivity Char(1),
+typAktivity Integer,
 popis Varchar2(50),
 PRIMARY KEY(typAktivity)
 );
 /
 CREATE TABLE typMaterialu
 (
-typMaterialu Char(1),
+typMaterialu Integer,
 popis Varchar2(50),
 PRIMARY KEY(typMaterialu)
 );
@@ -51,6 +51,7 @@ CREATE TABLE oddelenie
 oddelenie Integer,
 nadOddelenie Integer,
 IDbudovy Integer,
+Nazov Varchar2(200),
 PRIMARY KEY(oddelenie)
 );
 /
