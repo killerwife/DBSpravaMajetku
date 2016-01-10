@@ -1,0 +1,27 @@
+create or replace trigger kontrolaDatumuPracovnik
+after update
+on pracovnik
+for each row
+begin
+if(:new.datumOdstupu<:new.datumPrijatia)
+then
+begin
+rollback;
+end;
+end if;
+end;
+/
+
+create or replace trigger kontrolaDatumuUmiestnenie
+after update
+on umiestnenieMajetku
+for each row
+begin
+if(:new.datumOdobratia<:new.datumPriradenia)
+then
+begin
+rollback;
+end;
+end if;
+end;
+/
