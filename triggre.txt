@@ -25,3 +25,29 @@ end;
 end if;
 end;
 /
+
+CREATE SEQUENCE majetok_sequence START WITH 41;
+
+CREATE OR REPLACE TRIGGER majetok_id_trigger 
+BEFORE INSERT ON majetok
+FOR EACH ROW
+
+BEGIN
+  SELECT majetok_sequence.NEXTVAL
+  INTO   :new.idMajetku
+  FROM   dual;
+END;
+/
+
+CREATE SEQUENCE pracovnik_sequence START WITH 21;
+
+CREATE OR REPLACE TRIGGER pracovnik_id_trigger 
+BEFORE INSERT ON pracovnik
+FOR EACH ROW
+
+BEGIN
+  SELECT pracovnik_sequence.NEXTVAL
+  INTO   :new.idPracovnika
+  FROM   dual;
+END;
+/
